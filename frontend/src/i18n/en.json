@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "courses": "Courses",
+    "admissions": "Admissions",
+    "faculty": "Faculty",
+    "facilities": "Facilities",
+    "placements": "Placements",
+    "contact": "Contact Us",
+    "gallery": "Gallery",
+    "news": "News",
+    "downloads": "Downloads",
+    "faq": "FAQ",
+    "alumni": "Alumni"
+  },
+  "home": {
+    "welcome": "Welcome to Punjab College",
+    "tagline": "Empowering Education in Punjab Since 1995",
+    "applyNow": "Apply Online Now",
+    "downloadProspectus": "Download Prospectus",
+    "featuredCourses": "Featured Courses",
+    "quickLinks": "Quick Links",
+    "latestNews": "Latest News & Events"
+  },
+  "admissions": {
+    "title": "Admissions 2026-27",
+    "subtitle": "Eligibility, Fees, and Online Application",
+    "process": "Admission Process",
+    "feeStructure": "Fee Structure",
+    "scholarship": "Scholarship",
+    "applyNow": "Apply Online"
+  },
+  "form": {
+    "fullName": "Full Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "course": "Select Course",
+    "category": "Category",
+    "marks": "12th Marks (%)",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "message": "Message",
+    "sendInquiry": "Send Inquiry"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "punjabPortals": "Punjab Portals",
+    "contactUs": "Contact Us",
+    "rights": "All rights reserved"
+  },
+  "common": {
+    "readMore": "Read More",
+    "viewDetails": "View Details",
+    "download": "Download",
+    "loading": "Loading...",
+    "error": "Something went wrong"
+  }
+}

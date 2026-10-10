@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "home": "ਮੁੱਖ ਪੰਨਾ",
+    "about": "ਸਾਡੇ ਬਾਰੇ",
+    "courses": "ਕੋਰਸ",
+    "admissions": "ਦਾਖਲੇ",
+    "faculty": "ਫੈਕਲਟੀ",
+    "facilities": "ਸਹੂਲਤਾਂ",
+    "placements": "ਪਲੇਸਮੈਂਟ",
+    "contact": "ਸੰਪਰਕ ਕਰੋ",
+    "gallery": "ਗੈਲਰੀ",
+    "news": "ਖ਼ਬਰਾਂ",
+    "downloads": "ਡਾਊਨਲੋਡ",
+    "faq": "ਆਮ ਸਵਾਲ",
+    "alumni": "ਪੁਰਾਣੇ ਵਿਦਿਆਰਥੀ"
+  },
+  "home": {
+    "welcome": "ਪੰਜਾਬ ਕਾਲਜ ਵਿੱਚ ਜੀ ਆਇਆਂ ਨੂੰ",
+    "tagline": "1995 ਤੋਂ ਪੰਜਾਬ ਵਿੱਚ ਸਿੱਖਿਆ ਨੂੰ ਸਸ਼ਕਤ ਬਣਾ ਰਹੇ ਹਾਂ",
+    "applyNow": "ਹੁਣੇ ਆਨਲਾਈਨ ਅਪਲਾਈ ਕਰੋ",
+    "downloadProspectus": "ਪ੍ਰਾਸਪੈਕਟਸ ਡਾਊਨਲੋਡ ਕਰੋ",
+    "featuredCourses": "ਮੁੱਖ ਕੋਰਸ",
+    "quickLinks": "ਤੇਜ਼ ਲਿੰਕ",
+    "latestNews": "ਤਾਜ਼ਾ ਖ਼ਬਰਾਂ ਅਤੇ ਸਮਾਗਮ"
+  },
+  "admissions": {
+    "title": "ਦਾਖਲੇ 2026-27",
+    "subtitle": "ਯੋਗਤਾ, ਫੀਸ, ਅਤੇ ਆਨਲਾਈਨ ਅਰਜ਼ੀ",
+    "process": "ਦਾਖਲਾ ਪ੍ਰਕਿਰਿਆ",
+    "feeStructure": "ਫੀਸ ਢਾਂਚਾ",
+    "scholarship": "ਵਜ਼ੀਫ਼ਾ",
+    "applyNow": "ਆਨਲਾਈਨ ਅਪਲਾਈ ਕਰੋ"
+  },
+  "form": {
+    "fullName": "ਪੂਰਾ ਨਾਮ",
+    "email": "ਈਮੇਲ",
+    "phone": "ਫ਼ੋਨ ਨੰਬਰ",
+    "course": "ਕੋਰਸ ਚੁਣੋ",
+    "category": "ਸ਼੍ਰੇਣੀ",
+    "marks": "12ਵੀਂ ਦੇ ਅੰਕ (%)",
+    "submit": "ਭੇਜੋ",
+    "submitting": "ਭੇਜ ਰਹੇ ਹਾਂ...",
+    "message": "ਸੁਨੇਹਾ",
+    "sendInquiry": "ਪੁੱਛਗਿੱਛ ਭੇਜੋ"
+  },
+  "footer": {
+    "quickLinks": "ਤੇਜ਼ ਲਿੰਕ",
+    "punjabPortals": "ਪੰਜਾਬ ਪੋਰਟਲ",
+    "contactUs": "ਸੰਪਰਕ ਕਰੋ",
+    "rights": "ਸਾਰੇ ਹੱਕ ਰਾਖਵੇਂ"
+  },
+  "common": {
+    "readMore": "ਹੋਰ ਪੜ੍ਹੋ",
+    "viewDetails": "ਵੇਰਵੇ ਵੇਖੋ",
+    "download": "ਡਾਊਨਲੋਡ",
+    "loading": "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
+    "error": "ਕੁਝ ਗਲਤ ਹੋ ਗਿਆ"
+  }
+}
