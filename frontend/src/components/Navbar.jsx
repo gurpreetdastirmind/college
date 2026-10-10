@@ -8,7 +8,6 @@ import {
   FaHome,
   FaFacebookF,
   FaInstagram,
-  FaYoutube,
   FaWhatsapp,
   FaChevronDown,
 } from 'react-icons/fa';
@@ -98,7 +97,6 @@ export default function Navbar() {
   const socials = [
     { href: 'https://www.facebook.com/MASTERTARASINGHCOLLEGEFORWOMEN/', icon: <FaFacebookF />, label: 'Facebook', color: 'hover:bg-blue-600' },
     { href: 'https://www.instagram.com/mastertarasinghmemorialcollege/', icon: <FaInstagram />, label: 'Instagram', color: 'hover:bg-pink-600' },
-    { href: 'https://youtube.com', icon: <FaYoutube />, label: 'YouTube', color: 'hover:bg-red-600' },
     { href: 'https://wa.me/919988233666', icon: <FaWhatsapp />, label: 'WhatsApp', color: 'hover:bg-green-600' },
   ];
 
