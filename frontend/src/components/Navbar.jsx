@@ -3,7 +3,6 @@ import { useState, useRef, useEffect } from 'react';
 import {
   FaBars,
   FaTimes,
-  FaPhone,
   FaEnvelope,
   FaHome,
   FaFacebookF,
@@ -12,6 +11,19 @@ import {
   FaChevronDown,
 } from 'react-icons/fa';
 import logoImg from '../image/mtsm.png';
+
+// Custom Phone Logo Component (mimics the 3D handset in your second image)
+const PhoneLogo = ({ className = "" }) => (
+  <svg 
+    viewBox="0 0 24 24" 
+    fill="currentColor" 
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+    <path d="M16.5 3c-.28 0-.5.22-.5.5v.5c0 .28.22.5.5.5h1c.28 0 .5-.22.5-.5V3.5c0-.28-.22-.5-.5-.5h-1z" opacity="0.4"/>
+  </svg>
+);
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -68,7 +80,7 @@ export default function Navbar() {
     { to: '/academics/calendar', label: 'Academic Calendar' },
     { to: '/academics/time-table', label: 'Time Table' },
     { to: '/academics/syllabus', label: 'Syllabus' },
-    { to: '/academics/prospectus', label: 'Prospectus' },
+    {to:'/academics/prospectus',label:'Prospectus'},
     {
       label: 'Examination',
       children: [
@@ -129,12 +141,12 @@ export default function Navbar() {
       <div className="bg-primary text-white text-xs sm:text-sm py-2">
         <div className="container-custom flex justify-between items-center flex-wrap gap-2">
           <div className="flex gap-4 sm:gap-6 flex-wrap">
-            <span className="flex items-center gap-2 flex-row-reverse">
-              <FaPhone /> +91 99882 33666
+            {/* REPLACED FaPhone WITH PhoneLogo HERE */}
+            <span className="flex items-center gap-2">
+              <PhoneLogo className="w-5 h-5 text-white" />
+              +91 99882 33666
             </span>
-            <span className="flex items-center gap-2 flex-row-reverse">
-              <FaEnvelope /> mtsmcldh@gmail.com
-            </span>
+            <span className="flex items-center gap-2"><FaEnvelope /> mtsmcldh@gmail.com</span>
           </div>
           <div className="flex gap-4 sm:gap-5">
             <Link to="/scholarships" className="hover:text-accent transition">Scholarships</Link>
@@ -169,8 +181,8 @@ export default function Navbar() {
             <div className="flex gap-2">
               {socials.map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className={`w-9 h-9 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center transition ${s.color} hover:text-white`}>
+                   aria-label={s.label}
+                   className={`w-9 h-9 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center transition ${s.color} hover:text-white`}>
                   {s.icon}
                 </a>
               ))}
@@ -190,15 +202,15 @@ export default function Navbar() {
                 className="relative"
                 ref={
                   link.dropdown === 'about' ? aboutRef :
-                    link.dropdown === 'academics' ? academicsRef : null
+                  link.dropdown === 'academics' ? academicsRef : null
                 }
                 onMouseEnter={
                   link.dropdown === 'about' ? handleAboutEnter :
-                    link.dropdown === 'academics' ? handleAcademicsEnter : undefined
+                  link.dropdown === 'academics' ? handleAcademicsEnter : undefined
                 }
                 onMouseLeave={
                   link.dropdown === 'about' ? handleAboutLeave :
-                    link.dropdown === 'academics' ? handleAcademicsLeave : undefined
+                  link.dropdown === 'academics' ? handleAcademicsLeave : undefined
                 }
               >
                 {link.dropdown ? (
@@ -211,11 +223,12 @@ export default function Navbar() {
                       >
                         {link.label}
                         <FaChevronDown
-                          className={`text-xs transition-transform ${(link.dropdown === 'about' && aboutOpen) ||
-                              (link.dropdown === 'academics' && academicsOpen)
+                          className={`text-xs transition-transform ${
+                            (link.dropdown === 'about' && aboutOpen) ||
+                            (link.dropdown === 'academics' && academicsOpen)
                               ? 'rotate-180'
                               : ''
-                            }`}
+                          }`}
                         />
                       </button>
                     ) : (
@@ -223,19 +236,21 @@ export default function Navbar() {
                         to={link.to}
                         end={false}
                         className={({ isActive }) =>
-                          `flex items-center gap-2 px-4 py-3 font-semibold text-sm xl:text-base transition border-b-4 ${isActive
-                            ? 'text-green-700 border-green-600'
-                            : 'text-gray-800 hover:text-primary border-transparent'
+                          `flex items-center gap-2 px-4 py-3 font-semibold text-sm xl:text-base transition border-b-4 ${
+                            isActive
+                              ? 'text-green-700 border-green-600'
+                              : 'text-gray-800 hover:text-primary border-transparent'
                           }`
                         }
                       >
                         {link.label}
                         <FaChevronDown
-                          className={`text-xs transition-transform ${(link.dropdown === 'about' && aboutOpen) ||
-                              (link.dropdown === 'academics' && academicsOpen)
+                          className={`text-xs transition-transform ${
+                            (link.dropdown === 'about' && aboutOpen) ||
+                            (link.dropdown === 'academics' && academicsOpen)
                               ? 'rotate-180'
                               : ''
-                            }`}
+                          }`}
                         />
                       </NavLink>
                     )}
@@ -249,11 +264,12 @@ export default function Navbar() {
                       >
                         {aboutLinks.map((sub) => (
                           <NavLink key={sub.to} to={sub.to}
-                            onClick={() => setAboutOpen(false)}
-                            className={({ isActive }) =>
-                              `block px-4 py-2.5 text-sm transition ${isActive ? 'bg-blue-50 text-primary font-semibold'
-                                : 'text-gray-700 hover:bg-blue-50 hover:text-primary'
-                              }`}>
+                                   onClick={() => setAboutOpen(false)}
+                                   className={({ isActive }) =>
+                                     `block px-4 py-2.5 text-sm transition ${
+                                       isActive ? 'bg-blue-50 text-primary font-semibold'
+                                                : 'text-gray-700 hover:bg-blue-50 hover:text-primary'
+                                     }`}>
                             {sub.label}
                           </NavLink>
                         ))}
@@ -277,11 +293,12 @@ export default function Navbar() {
                               <div className="absolute left-full top-0 bg-white shadow-xl border border-gray-200 rounded-md min-w-[220px] py-2 hidden group-hover/sub:block">
                                 {sub.children.map((c) => (
                                   <NavLink key={c.to} to={c.to}
-                                    onClick={() => setAcademicsOpen(false)}
-                                    className={({ isActive }) =>
-                                      `block px-4 py-2 text-sm transition ${isActive ? 'bg-blue-50 text-primary font-semibold'
-                                        : 'text-gray-700 hover:bg-blue-50 hover:text-primary'
-                                      }`}>
+                                           onClick={() => setAcademicsOpen(false)}
+                                           className={({ isActive }) =>
+                                             `block px-4 py-2 text-sm transition ${
+                                               isActive ? 'bg-blue-50 text-primary font-semibold'
+                                                        : 'text-gray-700 hover:bg-blue-50 hover:text-primary'
+                                             }`}>
                                     {c.label}
                                   </NavLink>
                                 ))}
@@ -300,11 +317,12 @@ export default function Navbar() {
                             </a>
                           ) : (
                             <NavLink key={sub.to} to={sub.to}
-                              onClick={() => setAcademicsOpen(false)}
-                              className={({ isActive }) =>
-                                `block px-4 py-2.5 text-sm transition ${isActive ? 'bg-blue-50 text-primary font-semibold'
-                                  : 'text-gray-700 hover:bg-blue-50 hover:text-primary'
-                                }`}>
+                                     onClick={() => setAcademicsOpen(false)}
+                                     className={({ isActive }) =>
+                                       `block px-4 py-2.5 text-sm transition ${
+                                         isActive ? 'bg-blue-50 text-primary font-semibold'
+                                                  : 'text-gray-700 hover:bg-blue-50 hover:text-primary'
+                                       }`}>
                               {sub.label}
                             </NavLink>
                           )
@@ -314,10 +332,11 @@ export default function Navbar() {
                   </>
                 ) : (
                   <NavLink to={link.to} end={link.to === '/'}
-                    className={({ isActive }) =>
-                      `flex items-center gap-2 px-4 py-3 font-semibold text-sm xl:text-base transition border-b-4 ${isActive ? 'text-green-700 border-green-600'
-                        : 'text-gray-800 hover:text-primary border-transparent'
-                      }`}>
+                           className={({ isActive }) =>
+                             `flex items-center gap-2 px-4 py-3 font-semibold text-sm xl:text-base transition border-b-4 ${
+                               isActive ? 'text-green-700 border-green-600'
+                                        : 'text-gray-800 hover:text-primary border-transparent'
+                             }`}>
                     {link.icon && <span className="text-primary">{link.icon}</span>}
                     {link.label}
                   </NavLink>
@@ -328,8 +347,8 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button onClick={() => setOpen(!open)}
-            className="lg:hidden text-2xl text-primary p-3 ml-auto"
-            aria-label="Toggle menu">
+                  className="lg:hidden text-2xl text-primary p-3 ml-auto"
+                  aria-label="Toggle menu">
             {open ? <FaTimes /> : <FaBars />}
           </button>
 
@@ -337,8 +356,8 @@ export default function Navbar() {
           <div className="lg:hidden flex gap-1.5 mr-2">
             {socials.map((s) => (
               <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
-                aria-label={s.label}
-                className="w-8 h-8 rounded-full bg-white text-primary flex items-center justify-center text-sm">
+                 aria-label={s.label}
+                 className="w-8 h-8 rounded-full bg-white text-primary flex items-center justify-center text-sm">
                 {s.icon}
               </a>
             ))}
@@ -357,10 +376,11 @@ export default function Navbar() {
                       className="w-full flex items-center justify-between py-3 px-3 rounded font-medium text-gray-700 hover:bg-gray-50"
                     >
                       <span>{link.label}</span>
-                      <FaChevronDown className={`text-xs transition-transform ${(link.dropdown === 'about' && mobileAboutOpen) ||
-                          (link.dropdown === 'academics' && mobileAcademicsOpen)
+                      <FaChevronDown className={`text-xs transition-transform ${
+                        (link.dropdown === 'about' && mobileAboutOpen) ||
+                        (link.dropdown === 'academics' && mobileAcademicsOpen)
                           ? 'rotate-180' : ''
-                        }`} />
+                      }`} />
                     </button>
 
                     {/* Mobile About submenu */}
@@ -369,11 +389,12 @@ export default function Navbar() {
                         {aboutLinks.map((sub) => (
                           <li key={sub.to}>
                             <NavLink to={sub.to}
-                              onClick={() => { setOpen(false); setMobileAboutOpen(false); }}
-                              className={({ isActive }) =>
-                                `block py-2.5 px-3 rounded text-sm transition ${isActive ? 'bg-blue-50 text-primary font-semibold'
-                                  : 'text-gray-600 hover:bg-gray-50'
-                                }`}>
+                                     onClick={() => { setOpen(false); setMobileAboutOpen(false); }}
+                                     className={({ isActive }) =>
+                                       `block py-2.5 px-3 rounded text-sm transition ${
+                                         isActive ? 'bg-blue-50 text-primary font-semibold'
+                                                  : 'text-gray-600 hover:bg-gray-50'
+                                       }`}>
                               {sub.label}
                             </NavLink>
                           </li>
@@ -392,11 +413,12 @@ export default function Navbar() {
                                 {sub.children.map((c) => (
                                   <li key={c.to}>
                                     <NavLink to={c.to}
-                                      onClick={() => { setOpen(false); setMobileAcademicsOpen(false); }}
-                                      className={({ isActive }) =>
-                                        `block py-2 px-3 rounded text-sm ${isActive ? 'bg-blue-50 text-primary font-semibold'
-                                          : 'text-gray-600 hover:bg-gray-50'
-                                        }`}>
+                                             onClick={() => { setOpen(false); setMobileAcademicsOpen(false); }}
+                                             className={({ isActive }) =>
+                                               `block py-2 px-3 rounded text-sm ${
+                                                 isActive ? 'bg-blue-50 text-primary font-semibold'
+                                                          : 'text-gray-600 hover:bg-gray-50'
+                                               }`}>
                                       {c.label}
                                     </NavLink>
                                   </li>
@@ -418,11 +440,12 @@ export default function Navbar() {
                           ) : (
                             <li key={sub.to}>
                               <NavLink to={sub.to}
-                                onClick={() => { setOpen(false); setMobileAcademicsOpen(false); }}
-                                className={({ isActive }) =>
-                                  `block py-2.5 px-3 rounded text-sm ${isActive ? 'bg-blue-50 text-primary font-semibold'
-                                    : 'text-gray-600 hover:bg-gray-50'
-                                  }`}>
+                                       onClick={() => { setOpen(false); setMobileAcademicsOpen(false); }}
+                                       className={({ isActive }) =>
+                                         `block py-2.5 px-3 rounded text-sm ${
+                                           isActive ? 'bg-blue-50 text-primary font-semibold'
+                                                    : 'text-gray-600 hover:bg-gray-50'
+                                         }`}>
                                 {sub.label}
                               </NavLink>
                             </li>
@@ -434,11 +457,12 @@ export default function Navbar() {
                 ) : (
                   <li key={link.to}>
                     <NavLink to={link.to} end={link.to === '/'}
-                      onClick={() => setOpen(false)}
-                      className={({ isActive }) =>
-                        `flex items-center gap-3 py-3 px-3 rounded font-medium transition ${isActive ? 'text-green-700 bg-green-50'
-                          : 'text-gray-700 hover:bg-gray-50'
-                        }`}>
+                             onClick={() => setOpen(false)}
+                             className={({ isActive }) =>
+                               `flex items-center gap-3 py-3 px-3 rounded font-medium transition ${
+                                 isActive ? 'text-green-700 bg-green-50'
+                                          : 'text-gray-700 hover:bg-gray-50'
+                               }`}>
                       {link.icon && <span className="text-primary">{link.icon}</span>}
                       {link.label}
                     </NavLink>
