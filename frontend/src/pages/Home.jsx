@@ -159,8 +159,8 @@ export default function Home() {
               { icon: <FaFlask />, title: 'Science Labs', color: 'from-green-500 to-green-700' },
               { icon: <FaFutbol />, title: 'Sports', color: 'from-orange-500 to-orange-700' },
               { icon: <FaBus />, title: 'Transport', color: 'from-yellow-500 to-yellow-700' },
-              { icon: <FaHome />, title: 'Hostel', color: 'from-pink-500 to-pink-700' },
-              { icon: <FaBullhorn />, title: 'Auditorium', color: 'from-red-500 to-red-700' },
+              // { icon: <FaHome />, title: 'Hostel', color: 'from-pink-500 to-pink-700' },
+              // { icon: <FaBullhorn />, title: 'Auditorium', color: 'from-red-500 to-red-700' },
               { icon: <FaAward />, title: 'Scholarships', color: 'from-teal-500 to-teal-700' },
             ].map((f, i) => (
               <div key={i} className={`bg-gradient-to-br ${f.color} text-white p-6 rounded-xl text-center hover:scale-105 transition-transform cursor-pointer`}>
